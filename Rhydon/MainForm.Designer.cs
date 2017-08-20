@@ -69,6 +69,7 @@
             this.Stat_DEF = new System.Windows.Forms.MaskedTextBox();
             this.Stat_ATK = new System.Windows.Forms.MaskedTextBox();
             this.Stat_HP = new System.Windows.Forms.MaskedTextBox();
+            this.Stat_CurHP = new System.Windows.Forms.MaskedTextBox();
             this.TB_SPDDV = new System.Windows.Forms.MaskedTextBox();
             this.TB_SPCDV = new System.Windows.Forms.MaskedTextBox();
             this.TB_DEFDV = new System.Windows.Forms.MaskedTextBox();
@@ -80,6 +81,7 @@
             this.TB_SPCSTATEXP = new System.Windows.Forms.MaskedTextBox();
             this.TB_HPSTATEXP = new System.Windows.Forms.MaskedTextBox();
             this.Label_Stats = new System.Windows.Forms.Label();
+            this.Label_CurHP = new System.Windows.Forms.Label();
             this.Label_EVs = new System.Windows.Forms.Label();
             this.Label_DVs = new System.Windows.Forms.Label();
             this.Label_SPD = new System.Windows.Forms.Label();
@@ -561,6 +563,7 @@
             this.GB_Stats.Controls.Add(this.Stat_DEF);
             this.GB_Stats.Controls.Add(this.Stat_ATK);
             this.GB_Stats.Controls.Add(this.Stat_HP);
+            this.GB_Stats.Controls.Add(this.Stat_CurHP);
             this.GB_Stats.Controls.Add(this.TB_SPDDV);
             this.GB_Stats.Controls.Add(this.TB_SPCDV);
             this.GB_Stats.Controls.Add(this.TB_DEFDV);
@@ -572,6 +575,7 @@
             this.GB_Stats.Controls.Add(this.TB_SPCSTATEXP);
             this.GB_Stats.Controls.Add(this.TB_HPSTATEXP);
             this.GB_Stats.Controls.Add(this.Label_Stats);
+            this.GB_Stats.Controls.Add(this.Label_CurHP);
             this.GB_Stats.Controls.Add(this.Label_EVs);
             this.GB_Stats.Controls.Add(this.Label_DVs);
             this.GB_Stats.Controls.Add(this.Label_SPD);
@@ -645,6 +649,18 @@
             this.Stat_HP.Size = new System.Drawing.Size(31, 20);
             this.Stat_HP.TabIndex = 69;
             this.Stat_HP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Stat_CurHP
+            // 
+            this.Stat_CurHP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Stat_CurHP.Enabled = true;
+            this.Stat_CurHP.Location = new System.Drawing.Point(174, 36);
+            this.Stat_CurHP.Mask = "00000";
+            this.Stat_CurHP.Name = "Stat_CurHP";
+            this.Stat_CurHP.Size = new System.Drawing.Size(31, 20);
+            this.Stat_CurHP.TabIndex = 75;
+            this.Stat_CurHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Stat_CurHP.TextChanged += new System.EventHandler(this.updateCurHP);
             // 
             // TB_SPDDV
             // 
@@ -761,10 +777,19 @@
             // 
             this.Label_Stats.Location = new System.Drawing.Point(134, 23);
             this.Label_Stats.Name = "Label_Stats";
-            this.Label_Stats.Size = new System.Drawing.Size(40, 13);
+            this.Label_Stats.Size = new System.Drawing.Size(35, 13);
             this.Label_Stats.TabIndex = 68;
             this.Label_Stats.Text = "Stats";
             this.Label_Stats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Label_Stats
+            // 
+            this.Label_CurHP.Location = new System.Drawing.Point(171, 23);
+            this.Label_CurHP.Name = "Label_Current";
+            this.Label_CurHP.Size = new System.Drawing.Size(40, 13);
+            this.Label_CurHP.TabIndex = 74;
+            this.Label_CurHP.Text = "CurHP";
+            this.Label_CurHP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Label_EVs
             // 
@@ -1404,6 +1429,7 @@
         private System.Windows.Forms.MaskedTextBox Stat_DEF;
         private System.Windows.Forms.MaskedTextBox Stat_ATK;
         private System.Windows.Forms.MaskedTextBox Stat_HP;
+        private System.Windows.Forms.MaskedTextBox Stat_CurHP;
         private System.Windows.Forms.MaskedTextBox TB_SPDDV;
         private System.Windows.Forms.MaskedTextBox TB_SPCDV;
         private System.Windows.Forms.MaskedTextBox TB_DEFDV;
@@ -1422,6 +1448,7 @@
         private System.Windows.Forms.Label Label_DEF;
         private System.Windows.Forms.Label Label_ATK;
         private System.Windows.Forms.Label Label_HP;
+        private System.Windows.Forms.Label Label_CurHP;
         public System.Windows.Forms.GroupBox GB_OT;
         private System.Windows.Forms.TextBox TB_OT;
         private System.Windows.Forms.MaskedTextBox TB_TID;

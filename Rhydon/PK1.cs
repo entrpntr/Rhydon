@@ -366,7 +366,7 @@ namespace Rhydon
         public void CalculateStats()
         {
             ushort[] Stats = getStats();
-            HP_Max = HP_Current = Stats[(int)Tables.Stats.HP];
+            HP_Max = Stats[(int)Tables.Stats.HP];
             ATK = Stats[(int)Tables.Stats.ATK];
             DEF = Stats[(int)Tables.Stats.DEF];
             SPD = Stats[(int)Tables.Stats.SPD];

@@ -386,6 +386,21 @@ namespace Rhydon
             updateStats();
         }
 
+        private void updateCurHP(object sender, EventArgs e)
+        {
+            if (changingFields || !initializedFields) return;
+
+            if (sender != null && Util.ToInt32((sender as MaskedTextBox).Text) > 65535)
+                (sender as MaskedTextBox).Text = "65535";
+
+            changingFields = true;
+            pk1.HP_Current = (ushort) Util.ToInt32(Stat_CurHP.Text);
+
+            changingFields = false;
+
+            updateStats();
+        }
+
         private void updateStatEXPs(object sender, EventArgs e)
         {
             if (changingFields || !initializedFields) return;
@@ -435,6 +450,7 @@ namespace Rhydon
             Stat_DEF.Text = stats[2].ToString();
             Stat_SPD.Text = stats[3].ToString();
             Stat_SPC.Text = stats[4].ToString();
+            Stat_CurHP.Text = pk1.HP_Current.ToString();
         }
 
         private void mainMenuOpen(object sender, EventArgs e)
